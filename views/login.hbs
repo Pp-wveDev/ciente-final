@@ -15,9 +15,8 @@
         xhr.open('POST', '/userAuth');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function () {
-            console.log('looool');
             console.log('Signed in as: ' + xhr.responseText);
-            location.href = '/principal';
+            window.location.href = '/principal';
         };
         xhr.send('idtoken=' + id_token +
             "&email=" + email +

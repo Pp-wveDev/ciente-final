@@ -1,5 +1,4 @@
 const express = require('express');
-const isEmailIn = require('./util/loginUtil');
 
 var router = express.Router();
 
@@ -25,23 +24,18 @@ router.get('/', async (req, res) => {
 
 router.post('/userAuth', async (req, res) => {
     const email = req.body.email;
-    let newUser = ! await isEmailIn(email);
-
-    if (newUser) {// New user
-        //await newLogbook(email);
-    } else {// Logged user
-        req.session.email = email;
-        req.session.token = token;
-        req.session.save();
-    }
+    const token = req.body.idtoken;
+    
+    req.session.email = email;
+    req.session.token = token;
+    req.session.save();
 
     return res.json({ hola: "hola" });
 });
 
 router.post('/logout', async (req, res) => {
     req.session.destroy();
-
-    res.json({hola: "hola"});
+    res.json({ hola: "hola" });
 });
 
 // Login alternativo
