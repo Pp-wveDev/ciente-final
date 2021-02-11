@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
         // Obtenemos lista de mensajes
         const email = req.session.email;
         let mensajes = [];
-        mensajes = await getMensajes(email); // Es posible que de aqui no pase
-        // Esta parte deberia funcionar (me funciono momentaneamente en el examen y no me ha fallado nunca)
+        mensajes = await getMensajes(email);
+        
         res.render('main', {
             email: email,
             mensajes: mensajes

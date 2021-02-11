@@ -1,25 +1,24 @@
 <h1 class="display-2 text-center"> ¡Bienvenido {{email}}!</h1>
 <h1> Aqui estan tus mensajes: </h1>
-<table>
+<table class="table">
     <tr>
         <th>id</th>
-        <th>de</th>
         <th>de</th>
         <th>para</th>
         <th>asunto</th>
         <th>stamp</th>
-        <th>contenido</th>
-        <th>adjunto</th>
+<!--    <th>contenido</th>
+        <th>adjunto</th> -->
     <tr>
         {{#each mensajes}}
     <tr>
-        <td>{{cabecera.id}}</td>
+        <td>{{cabecera.idd}}</td>
         <td>{{cabecera.de}}</td>
         <td>{{cabecera.para}}</td>
         <td>{{cabecera.asunto}}</td>
         <td>{{cabecera.stamp}}</td>
-        <td>{{headers.contenido}}</td>
-        <td>{{headers.adjunto}}</td>
+<!--    <td>{{headers.contenido}}</td>
+        <td>{{headers.adjunto}}</td> -->
     </tr>
     {{/each}}
 </table>
