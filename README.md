@@ -2,7 +2,7 @@
 Prueba y ampliación del exámen final de Febrero de Ing. Web
 
 ## Web Inicial
-El repositorio de Heroku con los archivos que entregué del exámen es: josediaz-cliente.herokuapp.com
+El repositorio de Heroku con los archivos que entregué del exámen es: https://josediaz-cliente.herokuapp.com
 Tras probarlo en casa:
  - El login no enlaza bien (no pude probarlo en el laboratorio). 
  - Ahora las peticiones a mi backend si que se pueden llevar a cabo (se cargan los mensajes).
