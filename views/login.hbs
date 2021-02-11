@@ -1,0 +1,33 @@
+<h1 class="display-2" style="text-align: center;"> Login </h1>
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="light" data-width="300" data-height="50"
+    data-longtitle="true"></div>
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        // Tomamos los datos del usuario
+        var id_token = googleUser.getAuthResponse().id_token;
+        var email = profile.getEmail();
+        var name = profile.getName();
+        var img = profile.getImageUrl();
+
+        // Post al backend
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/userAuth');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function () {
+            console.log('looool');
+            console.log('Signed in as: ' + xhr.responseText);
+            location.href = '/principal';
+        };
+        xhr.send('idtoken=' + id_token +
+            "&email=" + email +
+            "&name=" + name +
+            "&img=" + img);
+    }
+</script>
+<p> O bien, si no tienes cookies habitadas: </p>
+<form method="post" action="/loginAlt">
+    <p>Usuario: <input type="text" name="usuario" /></p>
+    <p><input type="submit" value="Entrar" /></p>
+</form> 
+<p class="text-danger" style="text-align: center">{{message}}</p>
