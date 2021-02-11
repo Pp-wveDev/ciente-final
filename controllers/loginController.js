@@ -48,5 +48,4 @@ router.post('/loginAlt', async (req, res) => {
     return res.redirect('/principal');
 });
 
-
 module.exports = router;

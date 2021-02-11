@@ -1,8 +1,10 @@
 <h1 class="display-2">Nuevo mensaje</h1>
-<form method="post" action="/nuevoMensaje" enctype="multipart/form-data">
+<form method="post" action="/crearMensaje" enctype="multipart/form-data">
     <p>mensaje para: <input type="text" name="para" /></p>
     <p>asunto: <input type="text" name="asunto" /></p>
     <p>contenido: <input type="text" name="contenido" /></p>
     <p>Imagen: <input type="file" name="imagen" /></p>
-    <p><input type="submit" value="Enviar" /></p>
-</form> 
+    <p><input type="submit" class="btn btn-success" value="Enviar" />
+        <button class="btn btn-info" type="button" onclick="history.go(-1); return false;">Volver</button>
+    </p>
+</form>
