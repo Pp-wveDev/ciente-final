@@ -17,4 +17,16 @@ async function postMessage(mensaje) {
     }
 }
 
-module.exports = postMessage;
+async function deleteMessage(mId) {
+    try {
+        let result = (await axios.delete(mensajesUrl + "/id/" + mId)).data;
+        return result;
+    } catch (err) {
+        return "err";
+    }
+}
+
+module.exports = {
+    postMessage,
+    deleteMessage
+};

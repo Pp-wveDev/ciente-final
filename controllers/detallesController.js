@@ -1,5 +1,6 @@
 const express = require('express');
 const { p, getMensajeById } = require('./util/mensajesUtil');
+const { p2, deleteMessage } = require('./util/crearMensajesUtil');
 var router = express.Router();
 
 router.get('/:id', async (req, res) => {
@@ -21,6 +22,20 @@ router.get('/:id', async (req, res) => {
             adjunto: adjunto,
             mId: mensaje._id
         });
+    } catch (err) {
+        console.error(err);
+    }
+});
+
+router.get('/delete/:id', async (req, res) => {
+    if(!req.session.email) {
+        res.redirect('/');
+    }
+    try{
+        const mId = req.params.id;
+        await deleteMessage(mId);
+
+        res.redirect('/principal');
     } catch (err) {
         console.error(err);
     }

@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const postMessage = require('./util/crearMensajesUtil');
+const {postMessage, p} = require('./util/crearMensajesUtil');
 
 var router = express.Router();
 
