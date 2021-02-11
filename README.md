@@ -10,3 +10,6 @@ Tras probarlo en casa:
 
 ## Web final
 Tras trabajar sobre el proyecto, el enlace final es: 
+https://josediaz-server-def.herokuapp.com/
+
+Se han implementado todas las funciones pedidas. Los commits están hechos de forma individual, especificando que se añade en cada uno.
