@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const mensajesUrl = 'https://josediaz-apirest.herokuapp.com/messages'
+const mensajesUrl = 'https://josediaz-apirest-def.herokuapp.com/messages'
 
 async function getMensajes(userId) {
     let mensajes;
@@ -18,7 +18,7 @@ async function getMensajeById(mId) {
     try {
         mensajes = (await axios.get(mensajesUrl)).data;
         for (let i = 0; i < mensajes.length; i++) {
-            if (mensajes[i].cabecera.idd == mId)
+            if (mensajes[i]._id == mId)
                 return mensajes[i];
         }
 
