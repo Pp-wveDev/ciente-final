@@ -52,10 +52,11 @@ app.listen(port, () => {
 });
 
 // Controladores
-//const pruebaControler = require('./controllers/pruebaPeticiones');
 const loginControler = require('./controllers/loginController');
 const inicioController = require('./controllers/inicioController');
+const detallesController = require('./controllers/detallesController');
 
 // Registramos rutas
 app.use('/', loginControler);
 app.use('/principal', inicioController);
+app.use('/details', detallesController);

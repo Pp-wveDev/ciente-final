@@ -1,6 +1,6 @@
 const express = require('express');
 
-const getMensajes = require('./util/mensajesUtil');
+const {getMensajes, p} = require('./util/mensajesUtil');
 
 var router = express.Router();
 
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
         const email = req.session.email;
         let mensajes = [];
         mensajes = await getMensajes(email);
-        
+
         res.render('main', {
             email: email,
             mensajes: mensajes

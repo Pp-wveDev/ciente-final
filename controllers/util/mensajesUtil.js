@@ -12,4 +12,24 @@ async function getMensajes(userId) {
     }
 }
 
-module.exports = getMensajes;
+// No tenemos metodo para esto en la api
+async function getMensajeById(mId) {
+    let mensajes;
+    try {
+        mensajes = (await axios.get(mensajesUrl)).data;
+        for (let i = 0; i < mensajes.length; i++) {
+            if (mensajes[i].cabecera.idd == mId)
+                return mensajes[i];
+        }
+
+    } catch (err) {
+        console.log(err);
+    }
+
+    return undefined;
+}
+
+module.exports = {
+    getMensajes,
+    getMensajeById
+};
